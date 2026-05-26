@@ -498,5 +498,36 @@
     });
   }
 </script>
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(e,id){
+    if(e.target===document.getElementById(id)){
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow='';
+    }
+  }
+  document.querySelectorAll('.modal-close').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.modal-overlay').forEach(m=>m.classList.remove('active'));
+      document.body.style.overflow='';
+    });
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      document.querySelectorAll('.modal-overlay').forEach(m=>m.classList.remove('active'));
+      document.body.style.overflow='';
+    }
+  });
+  function filterNotes(cat){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.note-card').forEach(card=>{
+      if(cat==='all') card.classList.remove('hidden');
+      else if(card.classList.contains(cat)) card.classList.remove('hidden');
+      else card.classList.add('hidden');
+    });
+  }
+</script>
 </body>
 </html>
