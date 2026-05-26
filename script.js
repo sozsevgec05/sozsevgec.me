@@ -76,7 +76,10 @@ const observer = new IntersectionObserver(entries => {
     if (e.isIntersecting) e.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in').forEach(el => {
+  el.classList.add('hidden-init');
+  observer.observe(el);
+});
 
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
