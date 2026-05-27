@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes | Selehattin OZSEVGEC</title>
+  <title>Notes | Selehattin Ozsevgec</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <style>
@@ -433,27 +433,11 @@
 </div>
 
 <footer>
-  <p>© 2026 Selehattin OZSEVGEC — Built with purpose. Powered by curiosity.</p>
+  <p>© 2026 Selehattin Ozsevgec — Built with purpose. Powered by curiosity.</p>
 </footer>
 
 <script src="script.js"></script>
 <script>
-  // Hamburger menu
-  const ham = document.getElementById('hamburger');
-  const nav = document.getElementById('navLinks');
-  if(ham){
-    ham.addEventListener('click', () => {
-      ham.classList.toggle('active');
-      nav.classList.toggle('open');
-    });
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        ham.classList.remove('active');
-        nav.classList.remove('open');
-      });
-    });
-  }
-
   // Modal open/close
   function openModal(id){
     document.getElementById(id).classList.add('active');
